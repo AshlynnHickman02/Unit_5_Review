@@ -16,8 +16,8 @@ body{
    width: 95%;
    min-width: 640px; 
    max-width: 960px;
-   left: auto;
-   right: auto; 
+   margin-left: auto;
+   margin-right: auto; 
 }
 /*Go to the pc_specials.css file in your editor. Within the Page Body Styles section, add a style rule for 
    the body element that sets the width of the page body to 95% of the browser window width within the range 
@@ -35,7 +35,7 @@ img{
 */
 
 /* Horizontal Navigation Styles */
-li.horizontal{
+nav.horizontal li{
    display: block;
    float: left;
    width: 16.66%;
@@ -44,18 +44,20 @@ li.horizontal{
    Styles section and create a style rule for every list item within a horizontal navigation list that displays 
    the list item as a block floated on the left margin with a width of 16.66%. 
 */
-nav>a{
+nav a{
    display: block;
 }
 /* Display every hypertext link nested within a navigation list item as a block.*/
 
 /* Row Styles */
 div.newRow{
-   width: 100%;
-   clear: none;
+   clear: both;
 }
-div.newRow:{
-   
+div.newRow::after{
+   width: 100%;
+   clear: both;
+   content: "";
+   display: table; 
 }
 /* Next, you’ll create the style rules for the grid section of the March Specials page. Go to the Row Styles 
    section. For every div element of the newRow class, create a style rule that displays the element with 
@@ -80,7 +82,7 @@ div.col-1-1{
    width: 100%
 }
 div.col-1-2{
-   width: 100%;
+   width: 50%;
 }
 div.col-1-3{
    width: 33.33%;
@@ -98,8 +100,6 @@ div.col-3-4{
    col1-3, col-2-3, col-1-4, and col-3-4 to set their widths to 100%, 50%, 33.33%, 66.67%, 25%, 
    and 75% respectively. 
 */
-
-
 
 /* Specials Styles */
 div.specials{
@@ -132,20 +132,25 @@ div.awards{
    the awards class. Create a style rule that places these elements with absolute positioning 
    and sets their width to 30%.
 */ 
-div#award1{
-   float: 80px, 5%;
+div#awardList div#award1{
+   top: 80px, 
+   left: 5%;
 }
-div#award2{
-   float: 280px, 60%;
+div#awardList div#award2{
+   top: 280px; 
+   left: 60%;
 }
-div#award3{
-   float: 400px, 20%;
+div#awardList div#award3{
+   top: 400px; 
+   left: 20%;
 }
-div#award4{
-   float: 630px, 45%;
+div#awardList div#award4{
+   top: 630px; 
+   left: 45%;
 }
-div#award5{
-   float: 750%, 5%;
+div#awardList div#award5{
+   top: 750px;
+   left: 5%;
 }
 /* Position the individual awards within the awardList box by creating style rules for 
    the div elements with id values ranging from award1 to award5 at the following (top, left) 
@@ -156,6 +161,9 @@ div#award5{
 */
 
 /* Footer Styles */
+body > footer{
+   clear: both;
+}
 /* Go to the Footer Styles section and create a style rule for the body footer that displays 
    the footer once both margins are clear of previously floated elements.
 */
